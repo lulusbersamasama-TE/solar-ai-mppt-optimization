@@ -1,0 +1,15 @@
+# Data and trained artifacts are not stored in Git
+data/
+outputs/
+*.joblib
+*.npz
+*.zip
+*.gz
+*.xlsx
+*.parquet
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+.env
+*.pyc
+.DS_Store
