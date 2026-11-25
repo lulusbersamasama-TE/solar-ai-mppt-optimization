@@ -67,3 +67,6 @@ This protocol maps each course requirement to falsifiable numerical evidence. **
 **Verification Check:** Show a compact table with dataset/physics tests, split tests, repeated group splits, validation tuning, paired bootstrap, and command `Run all` success screenshots.
 
 **Individual peer/Git:** Use `docs/INDIVIDUAL_REFLECTION_TEMPLATE.md` independently for each team member. Never invent contributions.
+## GitHub CI scope
+
+The PR workflow checks notebook Python syntax and calls Notebook 04's exact `static_controller_run` function on a toy concave P–V curve to verify identical starting measurements, P&O reversal, reference-voltage tracking and 1-V step bounds. **Passing CI does not imply the numerical results on real derived data are correct.** Colab Notebook 04 is still mandatory for the real-dataset Verification Check.
