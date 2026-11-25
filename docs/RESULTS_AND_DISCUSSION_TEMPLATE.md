@@ -55,7 +55,7 @@ Group-disjoint retrains using three split seeds **7, 42, 2026**: RMSE values **[
 
 ## Verification and implementation limitations
 
-Explicitly report: no converter state-space dynamics, PWM or physical settling seconds; PV and meteorology came from different systems; fixed simulated section shading and nearest test-only curve matching; P&O does not receive six-section irradiance; model/claim reproducibility depends on saved seeds and split files; only two original near-uniform PV patterns; GitHub syntax CI is not numerical verification.
+Explicitly report: no converter state-space dynamics, PWM or physical settling seconds; PV and meteorology came from different systems; fixed simulated section shading and nearest test-only curve matching; P&O does not receive six-section irradiance; model/claim reproducibility depends on saved seeds and split files; only two original near-uniform PV patterns; GitHub syntax + synthetic controller smoke CI is not full original-dataset numerical verification.
 
 ## Individual Peer/Git reflection
 
