@@ -1,0 +1,32 @@
+[
+  {
+    "name": "eq01_ghi_persistence.png",
+    "latex": "$\\widehat{\\mathrm{GHI}}_{t+5} = \\mathrm{GHI}_{t}$",
+    "width_px": 427,
+    "height_px": 121
+  },
+  {
+    "name": "eq02_pv_power.png",
+    "latex": "$P(V) = V \\times I(V)$",
+    "width_px": 425,
+    "height_px": 105
+  },
+  {
+    "name": "eq03_gmpp.png",
+    "latex": "$V_{\\mathrm{GMPP}} = \\mathrm{arg\\,max}_{V}\\,P(V)$",
+    "width_px": 616,
+    "height_px": 105
+  },
+  {
+    "name": "eq04_shading.png",
+    "latex": "$G_{j}(t+h) = s_{j}\\times\\widehat{G}(t+h)$",
+    "width_px": 625,
+    "height_px": 121
+  },
+  {
+    "name": "eq05_efficiency.png",
+    "latex": "$\\eta_{\\mathrm{MPPT}} = \\frac{\\sum_{k} P_{\\mathrm{tracked},k}}{\\sum_{k} P_{\\mathrm{GMPP},k}}\\times100\\%$",
+    "width_px": 640,
+    "height_px": 201
+  }
+]
