@@ -1,0 +1,28 @@
+name: Export saved Notebook 04 figures
+on:
+  push:
+    branches:
+      - feature/paper-figures
+permissions:
+  contents: write
+jobs:
+  export-figures:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/paper-figures
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Extract saved PNG outputs
+        run: python scripts/export_saved_figures.py
+      - name: Commit figure PNGs to branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add paper_figures/
+          if ! git diff --cached --quiet; then
+            git commit -m "docs: include saved Notebook 04 figures for paper"
+            git push origin HEAD:feature/paper-figures
+          fi
