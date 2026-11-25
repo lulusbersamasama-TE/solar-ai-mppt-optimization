@@ -1,0 +1,29 @@
+name: Render paper mathematical equations
+on:
+  push:
+    branches: [feature/paper-equations]
+permissions:
+  contents: write
+jobs:
+  render-equations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/paper-equations
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install render dependencies
+        run: pip install matplotlib pillow
+      - name: Render and validate 5 equations
+        run: python scripts/render_paper_equations.py
+      - name: Store rendered images in branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add paper_equations/
+          if ! git diff --cached --quiet; then
+            git commit -m 'docs: render five mathematical equations used in paper'
+            git push origin HEAD:feature/paper-equations
+          fi
