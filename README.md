@@ -32,3 +32,12 @@ Then `pip install -r requirements.txt` and run notebook **01 → 02 → 03** fro
 Suggested responsibilities: **Member 1** SRRL preprocessing/forecasting; **Member 2** P–V physics and P&O verification; **Member 3** GMPP regression and integrated analysis. Work in feature branches and create reviewable pull requests; refer to issues in commit messages. Each member should review others' code for the peer/Git assessment.
 
 See [EXPERIMENT_RESULTS.md](EXPERIMENT_RESULTS.md) for preliminary results reproduced earlier in the conversation (not GitHub CI-verified).
+
+
+## Independent verification, sensitivity and analysis (new)
+
+After **01 → 02 → 03**, run **[Notebook 04](notebooks/04_verification_and_sensitivity.ipynb)** in Google Colab with the same Drive data and outputs. It measures exact P–V power loss from V_GMPP prediction errors; compares RF using six-section input versus average-only input; examines rapid GHI forecast transients; tunes P&O voltage initialization/perturbation **on validation only**; evaluates the same configurations on held-out test curves with equal sampling/update timing; calculates **paired whole-episode bootstrap confidence intervals**; and tests three independent grouped splits.
+
+Read [Verification Protocol](docs/VERIFICATION_PROTOCOL.md) for equations, falsifiable research questions, and course rubric mapping. GitHub Actions validates notebook Python syntax and runs a **synthetic controller smoke test** for update order and step bounds, but **does not** rerun training or real-dataset numerical results. For the individual Peer/Git component, each student should keep a separately authored [Reflection Template](docs/INDIVIDUAL_REFLECTION_TEMPLATE.md) with actual PR/commit/issue links.
+
+**Important:** Notebook 04's newly added analysis has **not** yet been executed on the user's Google Drive dataset. Run it before quoting new statistics; do not compare its first-step-aligned values with the older Notebook 03 values without noting the timing convention change.
